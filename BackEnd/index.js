@@ -1,4 +1,3 @@
-// index.js (pegar reemplazando todo)
 import express from "express";
 import fetch from "node-fetch";
 
@@ -44,7 +43,7 @@ app.get("/search", async (req, res) => {
       method: "POST",
       headers,
       body: JSON.stringify(body),
-      // timeout? node-fetch no trae timeout por defecto, puedes agregar si quieres
+      
     });
 
     // debug: show status
