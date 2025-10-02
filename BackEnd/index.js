@@ -1,8 +1,12 @@
+
 import express from "express";
 import fetch from "node-fetch";
+import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
+
+app.use(cors()); 
 
 // Aux: parse NDJSON -> array
 function parseNdjsonToArray(text) {
@@ -24,7 +28,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/search", async (req, res) => {
-  const name = req.query.name || "Ana";
+  const name = req.query.name || "";
   const url = "https://torre.ai/api/entities/_searchStream";
   const headers = {
     "accept": "application/json",
@@ -33,7 +37,7 @@ app.get("/search", async (req, res) => {
   const body = {
     query: name,
     identityType: "person",
-    limit: 10
+    // limit: 10
   };
 
   console.log(`🔎 Buscando: "${name}" -> llamando ${url}`);
@@ -65,7 +69,8 @@ app.get("/search", async (req, res) => {
       ardaId: d.ardaId ?? null
     }));
 
-    return res.json({ count: clean.length, results: clean });
+    // return res.json({ count: clean.length, results: clean });
+    return res.json(clean);
 
   } catch (err) {
     console.error("ERROR EN /search:", err);
