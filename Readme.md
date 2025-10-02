@@ -10,4 +10,7 @@
 2. Backend:
 3. Frontend:
 
+<img width="975" height="745" alt="image" src="https://github.com/user-attachments/assets/2b5949d2-5d5d-40b5-895e-e50e3abd77bf" />
+
+
 
