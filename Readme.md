@@ -9,12 +9,5 @@
 1. Clone repo
 2. Backend:
 3. Frontend:
-4. Open http://localhost:5173
 
-## Deploy
-- Frontend: Vercel
-- Backend: Render / Vercel Functions
-
-## Prompts (LLM usage)
-- See `prompts.md` for all prompts and tools used.
 
